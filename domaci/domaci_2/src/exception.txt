@@ -1,0 +1,3 @@
+FileNotFoundException se koristi kada zelimo da kazemo progamu da izbaci izuzetak na nepostojanje datog fajla.
+Recimo kada nema datog fajla ili je path netacan program ce izbaciti FileNotFoundException.
+sintaksa je slececa: class SomeClass throws FileNotFound Exception { ...

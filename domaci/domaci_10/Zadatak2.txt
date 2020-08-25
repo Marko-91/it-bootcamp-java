@@ -1,0 +1,8 @@
+* commit *
+	commit komanda uzima fajlove koji su dodati putem add komande i
+	priprema ih za push na remote repository.
+
+* merge *
+	merge komanda spaja dve grane na kojima se radi, recimo ako smo na
+	master grani i hocemo da spojimo nas rad sa nekom granom branch01
+	onda iz master grane kucamo merge komandu.

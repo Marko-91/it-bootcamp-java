@@ -1,0 +1,2 @@
+greska je u tome sto class BadExample() {...} sadrzi "()" pre tela klase... sto znaci da je tretirana kao metod a ne kao
+klasa. u klasi, da bi smo napravili konstruktor koristimo ime klase u samoj klasi i onda dodajemo parametre.

@@ -1,0 +1,22 @@
+********VARIABLES**********
+	
+	PRIMITIVE
+	int, long, double, float, bool, char, byte
+
+	COMPLEX
+	String, Arrays, ArrayLists, Scanner, ClassName(...)
+
+********LOOPS***************
+
+	while(conditionBoolean) {
+		/*dosomething*/
+	}
+	 	
+	for(iterator(optional);conditionBoolean;iteratorTransformation(optional)){
+		/*dosomething*/
+	}
+
+	do {
+	
+	/*dosomething*/
+	} while(conditionBoolean)
