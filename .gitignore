@@ -1,0 +1,13 @@
+#these files will be ignored
+
+bonus/
+lessons/
+test1/
+#all that is not in the src in domaci_0-infinity
+/domaci/domaci_[0-9]*/out/*
+/domaci/domaci_[0-9]*/*.iml
+/domaci/domaci_[0-9]*/.idea/*
+/projekat1/out/*
+/projekat1/.idea/*
+
+
