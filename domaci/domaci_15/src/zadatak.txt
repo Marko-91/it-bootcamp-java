@@ -1,0 +1,13 @@
+Napraviti sistem klasa koji opisuje knjigu.
+Autor poseduje ime, prezime, godinu rodjenja.
+Ime, prezime i godina rodjenja se zadaju prilikom kreiranja
+i ne mogu da se promene.
+
+Knjiga poseduje naziv, AUTORA (TIPA Autor),
+broj strana, godinu izdanja.
+Sva polja mogu da se dohvate,
+a godina izdanja moze i da se postavi
+
+U programu iskoristi sva polja iz svih kreiranih klasa gde ce se kreirati 3 knjige,
+a knjige biti poredjane po godini izdanja.
+
