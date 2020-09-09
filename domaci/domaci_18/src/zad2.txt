@@ -1,0 +1,8 @@
+@BeforeClass
+-- vraca poruku u output-u testa pre izvrsavanja klase test
+@AfterClass
+-- vraca poruku u output-u testa posle izvrsavanja klase test
+@BeforeMethod
+-- vraca poruku u output-u testa pre izvrsavanja metode u testu
+@AfterMethod
+-- vraca poruku u output-u testa posle izvrsavanja metode u testu
