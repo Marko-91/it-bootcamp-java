@@ -11,13 +11,13 @@ public class TestSortable {
     public static void main(String[] args) {
         System.setProperty(web_driver, PATH);
         WebDriver wd = new ChromeDriver();
-        Actions act = new Actions(wd);
         StringBuilder sb = new StringBuilder();
-        Thread t = new Thread();
 
         wd.get(Sortable.URL);
         wd.manage().window().maximize();
-        Sortable.sortDragNDropElements(wd, sb, act);
+        Sortable.sortDragNDropElements(6, wd, Sortable.firstItemXpath);
+        Sortable.clickGrid(wd);
+        Sortable.sortDragNDropElements(9, wd, Sortable.firstItemGridXpath);
 
     }
 }

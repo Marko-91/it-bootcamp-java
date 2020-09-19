@@ -8,27 +8,35 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Sortable {
     public static String URL = "https://demoqa.com/sortable";
-    private static String firstItemXpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]";
-    private static String sixthItemXpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[6]";
+    public static String firstItemXpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]";
+    public static String firstItemGridXpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]";
+    private static String gridItemXpath = "//a[@id='demo-tab-grid']";
 
-    private static WebElement getFirstItem(WebDriver wd) {
-        return wd.findElement(By.xpath(firstItemXpath));
+    public static WebElement getItem(WebDriver wd, String Xpath) {
+        return wd.findElement(By.xpath(Xpath));
     }
 
-    private static WebElement getBottomItem(WebDriver wd, String bottomItemXpath) {
-        return wd.findElement(By.xpath(bottomItemXpath));
+    public static void dragNDropItem(WebDriver wd, Actions action, String topItemXpath, String bottomItemXpath) {
+        action.dragAndDrop(getItem(wd, topItemXpath), getItem(wd, bottomItemXpath)).build().perform();
     }
 
-    public static void dragNDropItem(WebDriver wd, Actions action, String bottomItemXpath) {
-        action.dragAndDrop(getFirstItem(wd), getBottomItem(wd, bottomItemXpath)).build().perform();
+    public static WebElement getGrid(WebDriver wd) {
+        return wd.findElement(By.xpath(gridItemXpath));
     }
 
-    public static void sortDragNDropElements(WebDriver wd, StringBuilder sb, Actions action) {
-        sb.append("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/");
-        for (int i = 6; i > 1; i--) {
+    public static void clickGrid(WebDriver wd) {
+        getGrid(wd).click();
+    }
+
+    public static void sortDragNDropElements(int numberOfElements, WebDriver wd, String topItemXpath) {
+        Actions action = new Actions(wd);
+        StringBuilder sb = new StringBuilder();
+        sb.append(topItemXpath);
+        sb.delete(sb.length() - 6, sb.length());
+        for (int i = numberOfElements; i > 1; i--) {
             String divXpath = String.format("div[%s]", i);
             sb.append(divXpath);
-            dragNDropItem(wd, action, sb.toString());
+            dragNDropItem(wd, action, topItemXpath, sb.toString());
             sb.delete(sb.length() - 6, sb.length());
             try {
                 Thread.sleep(1000);
