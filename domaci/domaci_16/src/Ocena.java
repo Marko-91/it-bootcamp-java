@@ -25,8 +25,8 @@ public class Ocena {
     public static float prosek(Ocena[] ocene) {
         int l = ocene.length;
         float sum = 0;
-        for (int i = 0; i < l; i++) {
-            sum += oceni(ocene[i].getPoeni());
+        for (Ocena ocena : ocene) {
+            sum += oceni(ocena.getPoeni());
         }
 
         return Math.round(sum / l);

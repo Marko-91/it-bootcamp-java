@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         Ocena[] ocene;
-        Ocena o1 = new Ocena(70, "Istorija", "Februar");
+        Ocena o1 = new Ocena(49, "Istorija", "Februar");
         Ocena o2 = new Ocena(49, "Istorija", "Februar");
-        Ocena o3 = new Ocena(81, "Istorija", "Februar");
+        Ocena o3 = new Ocena(49, "Istorija", "Februar");
         Ocena o4 = new Ocena(100, "Istorija", "Februar");
 
         ocene = new Ocena[4];

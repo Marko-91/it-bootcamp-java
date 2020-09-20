@@ -29,6 +29,7 @@ public class Sortable {
     }
 
     public static void sortDragNDropElements(int numberOfElements, WebDriver wd, String topItemXpath) {
+        // This method will sort drag and drop items in reverse order
         Actions action = new Actions(wd);
         StringBuilder sb = new StringBuilder();
         sb.append(topItemXpath);

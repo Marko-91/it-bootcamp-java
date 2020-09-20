@@ -81,12 +81,12 @@ public class AutomationShoppingTest {
                 we = wd.findElement(By.xpath("//input[@class='btn_primary cart_button']"));
                 we.click();
                 for (int j = 1; j < sheetout.getPhysicalNumberOfRows(); j++) {
-                    Row rowTest = sheetout.getRow(j);
-                    Cell cellTest = rowTest.getCell(3);
-                    cell = row.getCell(0);
+                    Row rowTest = sheetout.getRow(j); // rows are dynamic
+                    Cell cellTest = rowTest.getCell(3); // cols are always 3, user name foreign key
+                    cell = row.getCell(0); // username, row is dynamic
                     if (cellTest.toString().equals(cell.toString())) {
                         we = wd.findElement(By.xpath("//div[@class='summary_tax_label']")); // Get tax
-                        if (we.getText().equals(rowTest.getCell(0).toString())) {
+                        if (we.getText().equals(rowTest.getCell(0).toString())) { // move to tax field in test
                             System.out.println("The taxes match!");
                         } else {
                             System.out.println("The taxes woun't match... something bad...");
